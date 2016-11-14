@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://haagahelia.github.io/oswd/en/xc/09.06.html -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Rainfall</title>
+    </head>
+    <body>
+        <h3>The Annual Rainfall</h3>
+        <div id="answer"></div>
+        <script type="text/javascript">
+            var rainfall = [47.0, 36.6, 34.7, 37.0, 41.9, 47.5, 61.7, 74.8, 65.4, 69.7, 66.1, 54.6]; 
+            var sum = 0;
+            for (var i = 0; i < rainfall.length; i = i + 1) {
+                sum = sum + rainfall[i];
+                console.log(sum);
+            }
+            document.getElementById("answer").innerHTML = "The annual rainfall in Helsinki is " + sum.toFixed(1) + " mm."
+            // Create an array with twelve rainfall values
+            // Initialize the sum variable to start from 0				
+            // Loop through the array
+                // Sum = sum + value at the i:th index in the array	
+            // Write the sum of the rainfall values on the HTML page	
+        </script>
+    </body>
+</html>

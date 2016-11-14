@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Weather</title>
+    </head>
+    <body>
+        <h1>Temperature converter</h1>
+        <select id="options">
+            <option value="C">Fahrenheit to Celsius</option>
+            <option value="F">Celsius to Fahrenheit</option>
+        </select>
+        <input type="number" name="inputTemp" id="inputTemp" size="8">
+        <p>
+			<input type="button" value="Convert" onclick="giveResult()">
+		</p>
+        <p id="result"></p>
+        
+        <script type="text/javascript">
+            var x = document.getElementById("options");
+                                                    
+            function convertTemperature(a, b) {
+                if (b === "F") {  
+                    return (a * 1.8) + 32;
+                } else {
+                    return (a - 32) * 5 / 9;
+                }
+            }
+            
+            function giveResult() {
+                var targetTemp = document.getElementById("options").value; 
+                var inputTemp = document.getElementById("inputTemp").value;
+                console.log(targetTemp);
+                console.log(inputTemp);
+                document.getElementById("result").innerHTML = "The result is " +  convertTemperature(inputTemp, targetTemp).toFixed(1);
+            }
+            
+        </script>
+    </body>
+</html>

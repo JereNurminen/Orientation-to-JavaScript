@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Key Codes</title>
+    </head>
+    <body>
+        <h3>Key Codes</h3>
+        <p>
+            <script type="text/javascript">
+                function generateKeyCode(min, max) {
+                    var length; 
+                    var leadingZeroCount;
+                    var keyCode = Math.round((Math.random() * max) + min);  
+                    leadingZeroCount = 4 - keyCode.toString().length;  
+                    for (var j = 1; j <= leadingZeroCount; j++) { 
+                        keyCode = "0" + keyCode;  
+                    }  
+                return keyCode.toString();  
+                }
+                function makeList() {
+                    var output = "";
+                    for (var i = 1; i < 101; i++) {
+                        if (i % 10 === 0) {
+                        output = output + generateKeyCode(1, 9999) + "<br>";
+                        } else {
+                        output = output + generateKeyCode(1, 9999) + " ";    
+                        }
+                    }
+                    return output;
+                    }
+                console.log(makeList());
+                document.write(makeList());
+                    // For  hundred times
+                    // Call generateKeyCode() function
+                    // Print key code to the document
+                    // If ordinal number of the keyCode MODULO (%) 10 equals zero
+                    // Print html line break to the document
+
+
+                
+            </script>
+        </p>
+    </body>
+</html>

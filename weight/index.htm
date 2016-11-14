@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Weight </title>
+    <script type="text/javascript">        
+        function showWeightGoals() {
+            var origWeight = document.getElementById("weight").value;
+            var lossAmount = (origWeight * 0.1) / 7;
+            var targetWeight = origWeight * 0.9;
+            var output = " ";
+            var week = 0;
+            var text = " ";
+            for (var a = origWeight - lossAmount; a > targetWeight; a = a - lossAmount) {
+                week = week + 1;
+                console.log(week);
+                console.log(a);
+                text = text +  "<br >After " + week + ". week " + a.toFixed(2) + " kg";
+            }
+            document.getElementById("answer").innerHTML = text;
+        }
+    </script>
+</head>
+    <body>
+        <h3>Weight</h3>
+        <form>
+            <p>
+                <label>Original weight: </label> <input name="weight" id="weight" size="3" type="text"> <input value="Show weight goals" onclick="showWeightGoals()" type="button">
+            </p>
+        </form>
+        <div id="answer"></div>
+    </body>
+</html>

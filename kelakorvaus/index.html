@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://haagahelia.github.io/oswd/en/xc/07.06.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Kela reimbursement</title>
+<style type="text/css">
+label {
+	display: block;
+	width: 10em;
+	float: left;
+}
+</style>
+
+<script type="text/javascript">
+    /* Doctor’s visit, no more than 10 min, 8.00 euros
+    Doctor’s visit, no more than 20 min, 11.00 euros
+    Doctor’s visit, no more than 30 min, 13.50 euros
+    Doctor’s visit, no more than 45 min, 16.50 euros
+    Doctor’s visit, no more than 60 min, 21.00 euros */
+	function maxReimbursement(minutes) {
+        if (minutes <= 10) {
+            return 8;
+        } else if (minutes > 60) {
+            return 21;
+        } else {
+            if (minutes > 45) {
+                return 21;
+            } else if (minutes > 30) {
+                return 16.5;
+            } else {
+                if (minutes > 20) {
+                    return 13.5;
+                } else {
+                return 11;
+                }
+            }
+        }
+    }  
+    
+    function leftToPay(doctorsFee, max) {
+        return doctorsFee - max + 15.9;
+    }
+	function calculate() {
+		var length = parseFloat(document.getElementById("length").value);
+        var fee = parseFloat(document.getElementById("doctorsFee").value);
+        var answer = leftToPay(fee, maxReimbursement(length));
+        
+        /* document.getElementById("answer").innerHTML = "Doctor's fee is " + fee;
+        document.getElementById("answer").innerHTML = "Kela reimbursement is " + maxReimbursement(length);
+        document.getElementById("answer").innerHTML = "Office fee is 15.90 euros"; */
+        document.getElementById("answer").innerHTML = " Doctor's fee is " + fee.toFixed(2) + " euros." + "<br>" +"Kela reimbursement is " + maxReimbursement(length).toFixed(2) + " euros." + "<br>" + "Office fee is 15.90 euros" + "<br>" + " Customer needs to pay " + answer.toFixed(2) + " euros.";
+		// Call the function (1.) which calculates Kela reimbursement 		
+		// Call the function (2.) which calculates amount left for the customer to pay
+		// Write the answer on the page, to the answer div, as content of the div
+		
+	}
+</script>
+</head>
+<body>
+	<h3>Kela reimbursement</h3>
+
+	<form>
+		<p>
+			<label>Length of the visit: </label> <input type="text" name="length" id="length" size="3"> min
+		</p>
+		<p>
+			<label>Doctor’s Fee </label> <input type="text" name="doctorsFee" id="doctorsFee" size="8"> euros
+		</p>
+		<p>
+			<input type="button" value="Calculate" onclick="calculate()">
+		</p>
+	</form>
+
+	<!-- This is the target where the JavaScript will write the answer -->
+	<div id="answer"></div>
+
+
+
+<!-- test example:
+length = 21, doctorsFee = 69 -> Doctor’s Fee 69.00 euros 
+						Kela reimbursement 13.50 euros
+						Office Fee 15.90 euros
+						Customer needs to pay 71.40 euros
+-->
+</body></html>

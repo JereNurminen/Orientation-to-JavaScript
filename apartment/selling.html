@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Apartment Selling</title>
+
+<script type="text/javascript">
+	function calculateFee() {
+        var price = document.getElementById("price").value;
+		// Read value from the input field
+        var fee = 0.0344 * price;
+		// Calculate fee, save the result to a variable
+	   if (fee < 2400) {
+           fee = 2400;
+       } else {
+           ;
+       }
+		// If the fee is under minimum, change the fee
+		document.getElementById("fee").innerHTML = "The real estate agents fee is " + fee + "€"
+		// Write the answer on the page, to the fee div, as content of the div
+				
+	}
+</script>
+</head>
+
+<body>
+	<h3>Apartment Selling</h3>
+
+	<form>
+		<label>Price: </label> <input name="price" id="price" size="8" type="text">
+		<input value="Calculate Fee" onclick="calculateFee()" type="button">
+	</form>
+
+	<!-- This is the target where the JavaScript will write the answer -->
+	<div id="fee"></div>
+
+</body></html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://haagahelia.github.io/oswd/en/xc/06.09.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Infraction fine </title>
+
+<script type="text/javascript">
+	function tellInfractionFine() {
+		var speed = document.getElementById("drivingSpeed").value;
+		var limit = document.getElementById("speedLimit").value;
+        var ylinopeus = speed - limit;
+        var answer = " ";
+        var ticket = 0;
+        if (ylinopeus >= 1) {
+            if (ylinopeus > 20) {
+                answer = "Income based fine.";
+            } else if (limit < 60 ) {
+                if (ylinopeus <= 15 ) {
+                    answer = "Infraction fine is 85€";
+                } else {
+                    answer = "Infraction fine is 115€";
+                }
+            } else {
+                if (ylinopeus <= 15) {
+                    answer = "Infraction fine is 70€";
+                } else {
+                    answer = "Infraction fine is 100€";
+                }
+            }
+        } else {
+            answer = "No speeding, no ticket!";
+        }
+        document.getElementById("answer").innerHTML = answer;
+	}
+</script>
+</head>
+<body>
+	<h3>Infraction fine </h3>
+	<form>
+		<p>
+			<label>Driving Speed: </label> <input type="text" name="drivingSpeed" id="drivingSpeed" size="3">
+		</p>
+		<p>
+			<label>Speed limit: </label> <input type="text" name="speedLimit" id="speedLimit" size="3">
+		</p>
+		<p>
+			<input type="button" value="Tell about the ticket" onclick="tellInfractionFine()">
+		</p>
+	</form>
+
+		<!-- This is the target where the JavaScript will write the answer -->
+	<div id="answer"></div>
+
+
+
+<!--
+Rules:
+If the speed limit is 10-60 kilometers an hour, and the excess speed is no more than 15 km/h, the speeding leads into a 85-euro infraction fine (rikesakko). More than 15 but no more than 20 km/h leads into an infraction fine of 115 euros.
+If the speed limit is 70-120 kilometers an hour, a max 15 km/h speeding will be penalizes with 70-euro infraction fine. The infraction fine is 100 euros when the excess speed is more than 15 km/h, but no more than 20 km/h.
+(If the driver drives more than 20 km/h over the limit => he will get unit fines, päiväsakot).
+
+test example:
+drivingSpeed = 120, speedLimit = 120 -> No speeding, no fine
+drivingSpeed = 65, speedLimit = 60 -> Infraction fine is 85 euros.  
+drivingSpeed = 77, speedLimit = 60 -> Infraction fine is 150 euros.
+drivingSpeed = 105, speedLimit = 100 -> Infraction fine is 70 euros.  
+drivingSpeed = 117, speedLimit = 100 -> Infraction fine is 100 euros.
+drivingSpeed = 121, speedLimit = 100 -> Income-based unit fines.
+-->
+
+         
+</body></html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://haagahelia.github.io/oswd/en/xc/09.04.html -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Minigolf</title>
+    </head>
+    <body>
+        <h3>Minigolf</h3>
+        <div id="answer"></div>
+        <script type="text/javascript">
+            var minigolf = [23, 19, 37, 20, 21, 30, 26, 24];
+            minigolf.sort();
+            var smallest = minigolf[0];
+            var largest = minigolf[minigolf.length - 1];
+            document.getElementById("answer").innerHTML = "The smallest result is " + smallest + " (winner).<br>The biggest result is " + largest;
+            // Create an array with minigolf results of eight players 
+            // (23, 19, 37, 20, 21, 30, 26, 24)
+            // Sort the array
+            // Assign the smallest result of to a variable
+            // Assign the index of last array item to an variable
+            // Assign the biggest result to a variable
+            // Write the answer on the page, to the answer div, as content of the div	
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Images</title>
+    </head>
+    <body>
+        <h3>All Images</h3>
+        <script type="text/javascript">
+            var imageNames = ["face.png", "heart.png", "sun.png", "moon.png", "cloud.png"];  
+            for (var i = 0; i < imageNames.length; i = i + 1) {
+                var imgNum = imageNames[i];
+                var text = "<img src=" + imageNames[i] + ">";
+                document.write(text);
+                console.log(text);
+                // document.write('<img src=imgNum');
+            }
+            // Create an array with file names of images
+            // Use a for loop to show all the images. 	
+                // Use the document.write() method to write one new image element to the web page per each image.
+        </script>
+    </body>
+</html>

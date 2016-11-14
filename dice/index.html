@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://haagahelia.github.io/oswd/en/xc/07.04.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Dice</title>
+  <style type="text/css">
+#dice {
+  font-family: 'Verdana';
+  font-size: 30px;
+
+}
+</style>
+</head>
+<body>
+	<button onclick="rollTheDice()">ROLL THE DICE</button>
+	<script>
+		function randomInteger(from, to) {
+ 			// Return randomizedNumber between 'from' and 'to'.
+            return (from + Math.floor(Math.random() * to));
+		}
+
+		function rollTheDice() {
+	       var dice = randomInteger(1, 6);
+  			// Call the function randomInteger(from, to) with parameter values 1 and 6.
+  			// Assign the return value of the function to the variable.
+            document.getElementById("dice").innerHTML = dice;
+  			//Insert the value of the variable diceValue into the HTML div element whose id is 'dice'.
+}
+  </script>
+	<div id="dice"></div>
+
+</body></html>

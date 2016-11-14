@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://haagahelia.github.io/oswd/en/xc/06.05.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Body Mass Index (BMI)</title>
+
+<script type="text/javascript">
+	function calculateBMI() {
+        var mass = document.getElementById("weight").value;
+        var height = document.getElementById("height").value;
+        var bmi = (mass / ((height/100.0) * (height/100.0))).toFixed(2);
+        var vastaus = " "; 
+        if (bmi > 25) {
+            vastaus = " (Obese)";
+        } else if (bmi > 18.4) {
+            vastaus = " (Normal weight)";
+        } else {
+            vastaus = " (Underweight)";
+        }
+        document.getElementById("answer").innerHTML = "BMI is " + bmi + vastaus;
+	}
+</script>
+</head>
+<body>
+	<h3>Body Mass Index (BMI)</h3>
+
+	<form>
+		<p>
+			<label>Weight: </label> <input type="text" name="weight" id="weight" size="3"> kg
+		</p>
+		<p>
+			<label>Height: </label> <input type="text" name="height" id="height" size="3"> cm &nbsp;&nbsp;&nbsp;
+		</p>
+		<p>
+			<input type="button" value="Calculate BMI" onclick="calculateBMI()">
+		</p>
+	</form>
+
+	<div id="answer"></div>
+
+
+
+<!-- test example:
+weight = 89, height = 180-> bmi= 24.69 (Normal Weight)
+-->
+
+
+</body></html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <title>Identity Number</title>
+        <script type="text/javascript">
+            function show() {
+                var idNumber = document.getElementById("identityNumber").value;
+                
+                function checkGender() {
+                    if ((idNumber.charAt(idNumber.length-2)) % 2 === 0) {
+                        return "Female";
+                    } else {
+                        return "Male";
+                    }
+                }
+                
+                function parseBirth() {
+                    var d = parseInt(idNumber.substr(0,2));
+                    var m = parseInt(idNumber.substr(2,2));
+                    var y = parseInt(idNumber.substr(4, 2));
+                    var seperator = idNumber.charAt(6);
+                    if (seperator == "-") {
+                       y = y + 1900;
+                    } else if (seperator == "+") {
+                       y = y + 1800;
+                    } else {
+                        y = y + 2000;
+                    }
+                    return d + "." + m + "." + y;
+                }
+                
+                document.getElementById("answer").innerHTML = checkGender() + ", born " + parseBirth();
+
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Identity Number</h3>
+        <form>
+            <label>Identity Number: </label> <input name="identityNumber" id="identityNumber" size="11" type="text"> <input value="Show" onclick="show()" type="button">
+        </form>
+        <div id="answer"></div>
+
+
+
+    </body>
+</html>
+<!-- test example:
+identityNumber = 241289-123A -> Male, born 24.12.1989
+identityNumber = 280210A122B -> Female, born 28.02.2010	
+identityNumber = 150989+1239 -> Male, born 15.09.1889 			
+-->

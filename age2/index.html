@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://haagahelia.github.io/oswd/en/xc/07.09.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Year of Birth</title>
+
+<script type="text/javascript">
+	
+	function tellAge() {
+		// Read value of yearOfBirth from the input field 
+	   var birthYear = document.getElementById("yearOfBirth").value;
+        function checkAge() {
+            if (birthYear.length == 2 && birthYear.charAt(0) > 1) {
+                birthYear = 19 + birthYear;
+            } else if (birthYear.length == 2) {
+                birthYear = 20 + birthYear;
+            } else {
+                birthYear = birthYear;
+            }
+            console.log(birthYear);
+        }
+        checkAge();
+		// Figure out the current date into today variable 
+        var time = new Date();
+	   var currentYear = time.getFullYear();
+        var age = currentYear - birthYear;
+		// Use getFullYear() method to get the current year out from the today variable
+		// Calculate the (rough estimate of the) age
+        if (age < 0) {
+            document.getElementById("answer").innerHTML = "It seems like you haven't even been born yet!";
+        } else {
+            document.getElementById("answer").innerHTML = "You're now " + age + " years old. <br> (Current year is " + currentYear + ".)";
+        }
+		// If age is less than zero
+			//  Show an error message
+		// otherwise 
+			// Tell the age
+		
+	}
+</script>
+
+</head>
+<body>
+	<h3>Year of Birth</h3>
+
+	<form>
+		<label>Year of Birth: </label> <input type="text" name="yearOfBirth" id="yearOfBirth" size="4"> <input type="button" value="Tell the age" onclick="tellAge()">
+	</form>
+
+	<div id="answer"></div>
+
+
+
+<!-- test example:
+yearOfBirth = 1989, currentYear = 2015 -> age = 26  
+--></body></html>

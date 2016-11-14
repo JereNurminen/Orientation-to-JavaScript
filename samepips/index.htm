@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Same Pips</title>
+
+</head>
+    <body>
+        <h3>Same Pips</h3>
+        <div id="answer"></div>
+        <script type="text/javascript">
+            // Randomize the pips1 and pips2 once
+            // Set the count to be one (now you have randomized once)
+            // Repeat as long as (pips are not equal) 
+                // Randomize again
+                // Increment counter by one
+            // Write the answer (including the count) to the html page with the document.write() method
+            function randomize() {
+                return 1 + Math.floor(Math.random() * 6);
+            }
+
+            var count = 0;
+            var pip1 = 1;
+            var pip2 = 2;
+            while (pip1 != pip2) {
+                pip1 = 1 + Math.floor(Math.random() * 6)
+                pip2 = 1 + Math.floor(Math.random() * 6)
+                var count = count + 1;
+            }
+            document.write("Same Dice pips with: " + pip1 + " and " + pip2 + "<br> There were " + count + " randomization rounds until we got the same pips.");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://haagahelia.github.io/oswd/en/xc/06.03.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Package Comparison</title>
+<script type="text/javascript">
+
+	function comparePackages() {
+		// assign input field values into a variables
+		var text = document.getElementById("textMessages").value;
+        var call = document.getElementById("callTime").value;
+        var answer = " "
+		// calculate the costs of the Special Package
+		var specPack = (19.9 + text * 0.069 + call * 0.069).toFixed(2);
+		// If the Special package is cheaper than the All-inclusive package 
+		if (specPack < 29.9) {
+            var answer = "The Special package " + specPack + " is cheaper than the All-inclusive package (29.90)";
+        }
+			// assign text "The Special package (XX.XX) is cheaper than the All-inclusive package (29.90)"
+			// to a variable
+		else {
+            var answer = "The All-inclusive package (29.90) is cheaper than the Special package (" + specPack + ")";
+        }			
+		// otherwise
+			// assign text "The All-inclusive package (29.90) is cheaper than the Special package (XX.XX)"
+			// to a variable
+		document.getElementById("answer").innerHTML = answer;
+		// write the answer to the web page DOM, in the answer div, as the content
+		
+	}
+</script>
+</head>
+<body>
+	<h3>Package Comparison</h3>
+
+	<form>
+		<p>
+			<label>Text messages: </label> <input type="text" name="textMessages" id="textMessages" size="3"> pcs
+		</p>
+		<p>
+			<label>Call time: </label> <input type="text" name="callTime" id="callTime" size="3"> min
+		</p>
+		<p>
+			<input type="button" value="Compare Packages" onclick="comparePackages()">
+		</p>
+	</form>
+
+	<!-- This is the target where the JavaScript will write the answer -->
+	<div id="answer"></div>
+
+
+
+<!-- test example: 
+textMessages  = 20 , callTime=30-> costs=23.35 euros (Special Package) 
+textMessages  = 100 , callTime=150-> costs=37.15 euros (Special Package)  
+-->
+</body></html>

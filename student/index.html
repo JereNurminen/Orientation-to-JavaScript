@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Student</title>
+    </head>
+    <body>
+        <h3>Student</h3>
+        <div id="answer"></div>
+        <script type="text/javascript">
+            var student = {
+                studentNumber:"a1600526",
+                firstName:"Jere",
+                lastName:"Nurminen",
+                address:"Kaunispääntie 2",
+                postalCode:"00970",
+                city:"Helsinki",
+                fullName() {
+                    return this.lastName + " " + this.firstName;
+                },
+                fullAddress() {
+                    return this.address + " " + this.postalCode + " " + this.city;
+                }
+            };
+            
+            student.dob = "24.06.1994";
+
+            function showStudentInfo() {
+                //return JSON.stringify(i, null, 4);
+                 document.getElementById("answer").innerHTML = "Student number: " + student.studentNumber + "<br>Name: " + student.fullName() + "<br>Address: " + student.fullAddress() + "<br>Date of Birth: " + student.dob;
+            }
+            //console.log(showStudentInfo(student));
+            showStudentInfo();
+        </script>
+    </body>
+</html>

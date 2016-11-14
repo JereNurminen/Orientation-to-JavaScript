@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Courses</title>
+    </head>
+    <body>
+        <h3>10.05</h3>
+        <div id="answer"></div>
+        <script type="text/javascript">
+            var text = "";
+            var courses = [ 
+    // INSERT SWD1TTF001 COURSE HERE
+            {   "name": "Orientation to software engineering",
+                "code": "SWD1TF001",
+                "extent": "5",
+                "timing": "1.semester"
+                  },
+
+            {  "name": "Programming",
+                "code": "SWD1TF002",
+                "extent": "5",
+                "timing": "2.semester"
+                  }, 
+            {  "name": "Data management and databases",
+                "code": "SWD1TF003",
+                "extent": "5",
+                "timing": "2.semester"
+                  }, 
+            {  "name": "Mobile development project",
+                "code": "SWD1TF004",
+                "extent": "10",
+                "timing": "3.semester"
+                  }
+            ];
+            
+            function listCourses() {
+                for (var i = 0; i < courses.length; i++) {
+                    text = text + "Code: " + courses[i].code + "<br> Name: " + courses[i].name + "<br> Extent: " + courses[i].extent + "<br> Timing: " + courses[i].timing + "<br> <br>";
+                    console.log(text);
+                }
+                document.getElementById("answer").innerHTML = text;
+                // List courses from an object array , i is an index of array
+                // Write the answer on the page, to the answer div, as content of the div
+            }
+            // Call listCourses() function
+            listCourses();
+        </script>
+    </body>
+</html>

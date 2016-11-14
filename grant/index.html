@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://haagahelia.github.io/oswd/en/xc/06.07.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Study Grant</title>
+<style type="text/css">
+label {
+	display: block;
+	width: 6em;
+	float: left;
+}
+</style>
+<script type="text/javascript">
+	
+	function showStudyGrant() {
+	    var age = document.getElementById("age").value;
+        var parents = document.getElementById("withParents").value;
+        var tulos = " ";
+        if (age > 20 || parents == "n") {
+            tulos = "The study grant is 335,20 €";
+        } else if (age < 20 || parents == "y") {
+            tulos = "The study grant is 136,70 €";
+        } else {
+            tulos = "...ask Kela.";
+        }
+		document.getElementById("answer").innerHTML = tulos;
+	}
+</script>
+</head>
+<body>
+	<h3>Study Grant</h3>
+	<form>
+		<p>
+			<label>Age: </label> <input type="text" name="age" id="age" size="3">
+		</p>
+		<p>
+			<label>With Parents (y/n): </label> <input type="text" name="withParents" id="withParents" size="1">
+		</p>
+		<input type="button" value="Show Study Grant" onclick="showStudyGrant()">
+	</form>
+	<div id="answer"></div>
+<!-- test example:
+age = 20, withParents = n -> studyGrant= 335.20 euros
+age = 20, withParents = y ->  studyGrant= 136.70 euros
+age = 18, withParents = y -> studyGrant=Ask Kela
+-->
+</body></html>

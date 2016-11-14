@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Cottage rent per participant</title>
+        <style type="text/css">
+        label {
+            display: block;
+            width: 6em;
+            float: left;
+        }
+        </style>
+        <script type="text/javascript">
+            function calculateRent() {
+                            var rent = document.getElementById("rent").value;
+            var participants = document.getElementById("participants").value;
+            var tulos = rent / participants;
+                document.getElementById("answerDiv").innerHTML = "Rent per participant is " + tulos + " euros!";
+            };
+        </script>
+    </head>
+    <body>
+        <h3>Cottage rent per participant</h3>
+        <form>
+            <p>
+                <label>Rent: </label> <input type="text" name="rent" id="rent" size="5">
+            </p>
+            <p>
+                <label>Participants </label> <input type="text" name="participants" id="participants" size="3">
+            </p>
+            <p>
+                <input type="button" value="Calculate rent" onclick="calculateRent()">
+            </p>
+        </form>
+        <div id="answerDiv"></div>
+    </body>
+</html>

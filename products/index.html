@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://haagahelia.github.io/oswd/en/xc/10.06.html -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Products</title>
+    </head>
+    <body>
+        <h3>Products (JSON)</h3>
+        <div id="productList"></div>
+        <script type="text/javascript">
+            var json = '[{"number": 1, "name": "Samsung Smart LED-TV", "price": 449.00, "description": "HD-digi ready"},' + '{"number": 2, "name": "Samsung 2.1 SoundBar Home Theater", "price": 198.00, "description": "Connect to TV and stream music wireless"},' + '{"number": 3, "name": "Dilog CI+/CA module for pay-tv-cards", "price": 63.90, "description": "CI+ module for the table televisions"}]';
+            var listing = [{}];
+            var text = "";
+            
+            function listProducts() {
+                listing = JSON.parse(json);
+                for (var i = 0; i < listing.length; i++) {
+                    text = text + "Number: " + listing[i].number + "<br>Name: " + listing[i].name + "<br> Price: " + listing[i].price + "<br>Description: " + listing[i].description + "<br> <br>";
+                }
+                document.getElementById("productList").innerHTML = text;
+                // Parse the JSON text into Javascript objects (1 array, 3 'product' objects)
+                // Handle the product objects from the array. Use i to index the array.
+                // Write the output text to the web page (=to the DOM that browser then shows) 
+            }
+            
+            console.log(listing);
+            console.log(text);
+            listProducts();
+            // Call listProducts function
+        </script>
+    </body>
+</html>
